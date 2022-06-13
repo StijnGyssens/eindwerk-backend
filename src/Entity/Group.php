@@ -3,13 +3,18 @@
 namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiResource;
+use ApiPlatform\Core\Annotation\ApiSubresource;
 use App\Repository\GroupRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
- * @ApiResource()
+ * @ApiResource(
+ *     normalizationContext={"groups"={"group:read"}},
+ *     denormalizationContext={"groups"={"group:write"}},
+ * )
  * @ORM\Entity(repositoryClass=GroupRepository::class)
  * @ORM\Table(name="`group`")
  */
@@ -24,45 +29,59 @@ class Group
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups({"group:read","group:write","member:read","event:read"})
      */
     private $name;
 
     /**
      * @ORM\Column(type="text")
+     * @Groups({"group:read","group:write"})
      */
     private $description;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups({"group:read","group:write"})
      */
     private $location;
 
     /**
      * @ORM\ManyToOne(targetEntity=Style::class, inversedBy="groups")
+     * @Groups({"group:read","group:write"})
      */
     private $fightingStyle;
 
     /**
      * @ORM\ManyToOne(targetEntity=Region::class, inversedBy="groups")
      * @ORM\JoinColumn(nullable=false)
+     * @Groups({"group:read","group:write"})
      */
     private $historicalRegion;
 
     /**
      * @ORM\ManyToOne(targetEntity=Timeperiode::class, inversedBy="groups")
      * @ORM\JoinColumn(nullable=false)
+     * @Groups({"group:read","group:write"})
      */
     private $timeperiode;
 
     /**
      * @ORM\ManyToMany(targetEntity=Event::class, inversedBy="groups")
+     * @Groups({"group:read","group:write"})
      */
     private $events;
 
     /**
      * @ORM\ManyToMany(targetEntity=Member::class, inversedBy="groups")
+     * @Groups({"group:read","group:write"})
      */
     private $members;
+
+    /**
+     * @ORM\OneToOne(targetEntity=SocialMedia::class, cascade={"persist", "remove"})
+     * @Groups({"group:read","group:write"})
+     */
+    private $socials;
 
     public function __construct()
     {
@@ -191,6 +210,18 @@ class Group
     public function removeMember(Member $member): self
     {
         $this->members->removeElement($member);
+
+        return $this;
+    }
+
+    public function getSocials(): ?SocialMedia
+    {
+        return $this->socials;
+    }
+
+    public function setSocials(?SocialMedia $socials): self
+    {
+        $this->socials = $socials;
 
         return $this;
     }

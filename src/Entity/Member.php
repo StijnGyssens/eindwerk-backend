@@ -9,10 +9,14 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass=MemberRepository::class)
- * @ApiResource()
+ * @ApiResource(
+ *     normalizationContext={"groups"={"member:read"}},
+ *     denormalizationContext={"groups"={"member:write"}},
+ *     )
  */
 class Member implements UserInterface, PasswordAuthenticatedUserInterface
 {
@@ -25,6 +29,7 @@ class Member implements UserInterface, PasswordAuthenticatedUserInterface
 
     /**
      * @ORM\Column(type="string", length=180, unique=true)
+     * @Groups({"member:read","member:write"})
      */
     private $email;
 
@@ -36,28 +41,39 @@ class Member implements UserInterface, PasswordAuthenticatedUserInterface
     /**
      * @var string The hashed password
      * @ORM\Column(type="string")
+     * @Groups({"member:write"})
      */
     private $password;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups({"group:read","member:read","member:write"})
      */
     private $firstName;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups({"group:read","member:read","member:write"})
      */
     private $lastName;
 
     /**
      * @ORM\Column(type="boolean")
+     * @Groups({"group:read","member:read","member:write"})
      */
     private $leader;
 
     /**
      * @ORM\ManyToMany(targetEntity=Group::class, mappedBy="members")
+     * @Groups({"member:read","member:write"})
      */
     private $groups;
+
+    /**
+     * @ORM\OneToOne(targetEntity=SocialMedia::class, inversedBy="member", cascade={"persist", "remove"})
+     * @Groups({"member:read","member:write"})
+     */
+    private $socials;
 
     public function __construct()
     {
@@ -186,6 +202,10 @@ class Member implements UserInterface, PasswordAuthenticatedUserInterface
     {
         $this->leader = $leader;
 
+        if ($leader){
+            $this->setRoles(["ROLE_ADMIN"]);
+        }
+
         return $this;
     }
 
@@ -212,6 +232,18 @@ class Member implements UserInterface, PasswordAuthenticatedUserInterface
         if ($this->groups->removeElement($group)) {
             $group->removeMember($this);
         }
+
+        return $this;
+    }
+
+    public function getSocials(): ?SocialMedia
+    {
+        return $this->socials;
+    }
+
+    public function setSocials(?SocialMedia $socials): self
+    {
+        $this->socials = $socials;
 
         return $this;
     }

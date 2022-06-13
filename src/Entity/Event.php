@@ -7,9 +7,13 @@ use App\Repository\EventRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
- * @ApiResource()
+ * @ApiResource(
+ *     normalizationContext={"groups"={"event:read"}},
+ *     denormalizationContext={"groups"={"event:write"}},
+ *     )
  * @ORM\Entity(repositoryClass=EventRepository::class)
  */
 class Event
@@ -23,33 +27,45 @@ class Event
 
     /**
      * @ORM\Column(type="datetime")
+     * @Groups({"group:read","event:read","event:write"})
      */
     private $startDate;
 
     /**
      * @ORM\Column(type="datetime")
+     * @Groups({"group:read","event:read","event:write"})
      */
     private $endDate;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups({"group:read","event:read","event:write"})
      */
     private $name;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups({"event:read","event:write"})
      */
     private $location;
 
     /**
      * @ORM\Column(type="text", nullable=true)
+     * @Groups({"event:read","event:write"})
      */
     private $description;
 
     /**
      * @ORM\ManyToMany(targetEntity=Group::class, mappedBy="events")
+     * @Groups({"event:read","event:write"})
      */
     private $groups;
+
+    /**
+     * @ORM\OneToOne(targetEntity=SocialMedia::class, inversedBy="event", cascade={"persist", "remove"})
+     * @Groups({"event:read","event:write"})
+     */
+    private $socials;
 
     public function __construct()
     {
@@ -144,6 +160,18 @@ class Event
         if ($this->groups->removeElement($group)) {
             $group->removeEvent($this);
         }
+
+        return $this;
+    }
+
+    public function getSocials(): ?SocialMedia
+    {
+        return $this->socials;
+    }
+
+    public function setSocials(?SocialMedia $socials): self
+    {
+        $this->socials = $socials;
 
         return $this;
     }
