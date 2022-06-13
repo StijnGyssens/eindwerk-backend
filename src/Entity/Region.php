@@ -10,7 +10,10 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
- * @ApiResource()
+ * @ApiResource(
+ *     normalizationContext={"groups"={"region:read"}},
+ *     denormalizationContext={"groups"={"region:write"}},
+ *     )
  * @ORM\Entity(repositoryClass=RegionRepository::class)
  */
 class Region
@@ -24,12 +27,13 @@ class Region
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups({"group:read"})
+     * @Groups({"group:read","region:read","region:write"})
      */
     private $historicalRegion;
 
     /**
      * @ORM\OneToMany(targetEntity=Group::class, mappedBy="historicalRegion")
+     * @Groups({"region:read","region:write"})
      */
     private $groups;
 

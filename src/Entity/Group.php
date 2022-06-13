@@ -29,7 +29,7 @@ class Group
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups({"group:read","group:write","member:read","event:read"})
+     * @Groups({"group:read","group:write","member:read","event:read","region:read","style:read","time:read"})
      */
     private $name;
 

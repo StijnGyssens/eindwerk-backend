@@ -10,7 +10,10 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
- * @ApiResource()
+ * @ApiResource(
+ *     normalizationContext={"groups"={"style:read"}},
+ *     denormalizationContext={"groups"={"style:write"}},
+ * )
  * @ORM\Entity(repositoryClass=StyleRepository::class)
  */
 class Style
@@ -24,17 +27,19 @@ class Style
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups({"group:read"})
+     * @Groups({"group:read","style:read","style:write"})
      */
     private $fightingStyle;
 
     /**
      * @ORM\Column(type="text")
+     * @Groups({"style:read","style:write"})
      */
     private $description;
 
     /**
      * @ORM\OneToMany(targetEntity=Group::class, mappedBy="fightingStyle")
+     * @Groups({"style:read","style:write"})
      */
     private $groups;
 
