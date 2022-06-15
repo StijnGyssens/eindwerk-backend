@@ -74,7 +74,7 @@ class Member implements UserInterface, PasswordAuthenticatedUserInterface
     private $groups;
 
     /**
-     * @ORM\OneToOne(targetEntity=SocialMedia::class, inversedBy="member", cascade={"persist", "remove"})
+     * @ORM\OneToOne(targetEntity=SocialMedia::class, inversedBy="member", cascade={"persist", "remove"}, orphanRemoval=true)
      * @Groups({"member:read","member:write"})
      */
     private $socials;
@@ -209,6 +209,9 @@ class Member implements UserInterface, PasswordAuthenticatedUserInterface
         if ($leader){
             $this->setRoles(["ROLE_ADMIN"]);
         }
+        else{
+            $this->setRoles(["ROLE_USER"]);
+        }
 
         return $this;
     }
@@ -250,5 +253,12 @@ class Member implements UserInterface, PasswordAuthenticatedUserInterface
         $this->socials = $socials;
 
         return $this;
+    }
+
+
+
+    public function __toString(): string
+    {
+        return $this->getFirstName() . " " . $this->getLastName();
     }
 }
