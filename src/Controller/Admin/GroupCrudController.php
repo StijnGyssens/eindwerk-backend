@@ -5,8 +5,7 @@ namespace App\Controller\Admin;
 use App\Entity\Group;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\FormField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
@@ -33,6 +32,11 @@ class GroupCrudController extends AbstractCrudController
             AssociationField::new('members')
                 ->autocomplete()
                 ->setFormTypeOption('by_reference', false),
+            CollectionField::new('socials')
+                ->allowAdd()
+                ->allowDelete()
+                ->renderExpanded()
+                ->setEntryIsComplex(true)
         ];
     }
 
