@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Group;
+use App\Form\SocialMediaType;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
@@ -36,6 +37,7 @@ class GroupCrudController extends AbstractCrudController
                 ->allowAdd()
                 ->allowDelete()
                 ->renderExpanded()
+                ->setEntryType(SocialMediaType::class)
                 ->setEntryIsComplex(true)
         ];
     }

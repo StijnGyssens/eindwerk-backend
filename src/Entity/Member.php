@@ -45,7 +45,6 @@ class Member implements UserInterface, PasswordAuthenticatedUserInterface
     /**
      * @var string The hashed password
      * @ORM\Column(type="string")
-     * @Groups({"member:write"})
      */
     private $password;
 
@@ -147,6 +146,17 @@ class Member implements UserInterface, PasswordAuthenticatedUserInterface
     }
 
     public function setPassword(string $password): self
+    {
+        $this->password = $password;
+
+        return $this;
+    }
+
+
+    /**
+     * @Groups({"member:write"})
+     */
+    public function setSimplePassword(string $password): self
     {
         $this->password = password_hash($password,PASSWORD_DEFAULT);
 
