@@ -13,6 +13,16 @@ use Symfony\Component\Serializer\Annotation\Groups;
  * @ApiResource(
  *     normalizationContext={"groups"={"region:read"}},
  *     denormalizationContext={"groups"={"region:write"}},
+ *     collectionOperations={
+ *          "get",
+ *          "post"={"security"="is_granted('ROLE_ADMIN') or is_granted('ROLE_SUPERADMIN')"}
+ *      },
+ *     itemOperations={
+ *          "get",
+ *          "put"={"security"="is_granted('ROLE_ADMIN') or is_granted('ROLE_SUPERADMIN')"},
+ *          "patch"={"security"="is_granted('ROLE_ADMIN') or is_granted('ROLE_SUPERADMIN')"},
+ *          "delete"={"security"="is_granted('ROLE_ADMIN') or is_granted('ROLE_SUPERADMIN')"}
+ *      }
  *     )
  * @ORM\Entity(repositoryClass=RegionRepository::class)
  */

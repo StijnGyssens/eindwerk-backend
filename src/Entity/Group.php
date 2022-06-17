@@ -13,6 +13,16 @@ use Symfony\Component\Serializer\Annotation\Groups;
  * @ApiResource(
  *     normalizationContext={"groups"={"group:read"}},
  *     denormalizationContext={"groups"={"group:write"}},
+ *     collectionOperations={
+ *          "get",
+ *          "post"={"security"="is_granted('ROLE_ADMIN') or is_granted('ROLE_SUPERADMIN')"}
+ *      },
+ *     itemOperations={
+ *          "get",
+ *          "put"={"security"="is_granted('ROLE_ADMIN') or is_granted('ROLE_SUPERADMIN')"},
+ *          "patch"={"security"="is_granted('ROLE_ADMIN') or is_granted('ROLE_SUPERADMIN')"},
+ *          "delete"={"security"="is_granted('ROLE_ADMIN') or is_granted('ROLE_SUPERADMIN')"}
+ *      }
  * )
  * @ORM\Entity(repositoryClass=GroupRepository::class)
  * @ORM\Table(name="`group`")
@@ -223,5 +233,9 @@ class Group
         $this->socials = $socials;
 
         return $this;
+    }
+    public function __toString(): string
+    {
+        return $this->getName();
     }
 }

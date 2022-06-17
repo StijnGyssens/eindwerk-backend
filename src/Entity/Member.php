@@ -18,6 +18,16 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @ApiResource(
  *     normalizationContext={"groups"={"member:read"}},
  *     denormalizationContext={"groups"={"member:write"}},
+ *     collectionOperations={
+ *          "get",
+ *          "post"={"security"="is_granted('ROLE_ADMIN') or is_granted('ROLE_SUPERADMIN')"}
+ *      },
+ *     itemOperations={
+ *          "get",
+ *          "put"={"security"="is_granted('ROLE_ADMIN') or is_granted('ROLE_SUPERADMIN')"},
+ *          "patch"={"security"="is_granted('ROLE_ADMIN') or is_granted('ROLE_SUPERADMIN')"},
+ *          "delete"={"security"="is_granted('ROLE_ADMIN') or is_granted('ROLE_SUPERADMIN')"}
+ *      }
  *     )
  * @UniqueEntity(fields={"email"}, message="There is already an account with this email")
  */
@@ -47,6 +57,8 @@ class Member implements UserInterface, PasswordAuthenticatedUserInterface
      * @ORM\Column(type="string")
      */
     private $password;
+
+    private $simplePassword;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -159,8 +171,14 @@ class Member implements UserInterface, PasswordAuthenticatedUserInterface
     public function setSimplePassword(string $password): self
     {
         $this->password = password_hash($password,PASSWORD_DEFAULT);
+        $this->simplePassword = $password;
 
         return $this;
+    }
+
+    public function getSimplePassword() :string
+    {
+        return $this->simplePassword;
     }
 
     /**

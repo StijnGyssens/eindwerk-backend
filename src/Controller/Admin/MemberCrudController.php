@@ -4,6 +4,10 @@ namespace App\Controller\Admin;
 
 use App\Entity\Member;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\EmailField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
 class MemberCrudController extends AbstractCrudController
 {
@@ -12,14 +16,19 @@ class MemberCrudController extends AbstractCrudController
         return Member::class;
     }
 
-    /*
+
     public function configureFields(string $pageName): iterable
     {
         return [
-            IdField::new('id'),
-            TextField::new('title'),
-            TextEditorField::new('description'),
+            EmailField::new('email'),
+            TextField::new('simplePassword'),
+            TextField::new('firstName'),
+            TextField::new('lastName'),
+            BooleanField::new('leader'),
+            AssociationField::new('groups')
+                ->autocomplete()
+                ->setFormTypeOption('by_reference', false)
         ];
     }
-    */
+
 }
