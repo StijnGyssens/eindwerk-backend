@@ -20,7 +20,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  *     denormalizationContext={"groups"={"member:write"}},
  *     collectionOperations={
  *          "get",
- *          "post"={"security"="is_granted('ROLE_ADMIN') or is_granted('ROLE_SUPERADMIN')"}
+ *          "post"
  *      },
  *     itemOperations={
  *          "get",
