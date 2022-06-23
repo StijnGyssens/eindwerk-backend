@@ -2,5 +2,5 @@
 #    path: /
 #    controller: App\Controller\DefaultController::index
 jwtlogin:
-  path: /api/login_check
-  methods: [POST]
+     path:    /api/login_check
+     methods:   [POST]

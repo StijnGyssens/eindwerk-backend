@@ -33,12 +33,12 @@ class GroupCrudController extends AbstractCrudController
             AssociationField::new('members')
                 ->autocomplete()
                 ->setFormTypeOption('by_reference', false),
-            CollectionField::new('socials')
+            /*CollectionField::new('socials')
                 ->allowAdd()
                 ->allowDelete()
                 ->renderExpanded()
                 ->setEntryType(SocialMediaType::class)
-                ->setEntryIsComplex(true)
+                ->setEntryIsComplex(true)*/
         ];
     }
 

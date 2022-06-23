@@ -2,12 +2,11 @@
 error_reporting( E_ALL );
 ini_set( 'display_errors', 1 );
 
-header('Access-Control-Allow-Credentials: true');
-
 use App\Kernel;
 use Symfony\Component\Dotenv\Dotenv;
 use Symfony\Component\ErrorHandler\Debug;
 use Symfony\Component\HttpFoundation\Request;
+
 
 //FOR PRODUCTION
 $install_path = "/eindwerk";

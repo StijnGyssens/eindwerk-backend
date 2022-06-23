@@ -1,0 +1,229 @@
+No lock file found. Updating dependencies instead of installing from lock file. Use composer update over composer install if you do not have a lock file.
+Loading composer repositories with package information
+Info from https://repo.packagist.org: [37;44m#StandWith[30;43mUkraine[0m
+Updating dependencies
+Lock file operations: 97 installs, 0 updates, 0 removals
+  - Locking api-platform/core (v2.6.8)
+  - Locking doctrine/annotations (1.13.2)
+  - Locking doctrine/cache (2.2.0)
+  - Locking doctrine/collections (1.6.8)
+  - Locking doctrine/common (3.3.0)
+  - Locking doctrine/dbal (3.3.7)
+  - Locking doctrine/deprecations (v0.5.3)
+  - Locking doctrine/doctrine-bundle (2.7.0)
+  - Locking doctrine/doctrine-migrations-bundle (3.2.2)
+  - Locking doctrine/event-manager (1.1.1)
+  - Locking doctrine/inflector (2.0.4)
+  - Locking doctrine/instantiator (1.4.1)
+  - Locking doctrine/lexer (1.2.3)
+  - Locking doctrine/migrations (3.4.2)
+  - Locking doctrine/orm (2.12.3)
+  - Locking doctrine/persistence (3.0.2)
+  - Locking doctrine/sql-formatter (1.1.3)
+  - Locking easycorp/easyadmin-bundle (v3.5.21)
+  - Locking fig/link-util (1.1.2)
+  - Locking friendsofphp/proxy-manager-lts (v1.0.12)
+  - Locking laminas/laminas-code (3.4.1)
+  - Locking laminas/laminas-eventmanager (3.4.0)
+  - Locking laminas/laminas-zendframework-bridge (1.4.1)
+  - Locking lcobucci/jwt (3.4.6)
+  - Locking lexik/jwt-authentication-bundle (v2.16.0)
+  - Locking namshi/jose (7.2.3)
+  - Locking nelmio/cors-bundle (2.2.0)
+  - Locking nikic/php-parser (v4.14.0)
+  - Locking phpdocumentor/reflection-common (2.2.0)
+  - Locking phpdocumentor/reflection-docblock (5.3.0)
+  - Locking phpdocumentor/type-resolver (1.6.1)
+  - Locking phpstan/phpdoc-parser (1.6.3)
+  - Locking psr/cache (1.0.1)
+  - Locking psr/container (1.1.1)
+  - Locking psr/event-dispatcher (1.0.0)
+  - Locking psr/link (1.0.0)
+  - Locking psr/log (1.1.4)
+  - Locking symfony/asset (v5.4.7)
+  - Locking symfony/cache (v5.4.9)
+  - Locking symfony/cache-contracts (v2.5.1)
+  - Locking symfony/config (v5.4.9)
+  - Locking symfony/console (v5.4.9)
+  - Locking symfony/dependency-injection (v5.4.9)
+  - Locking symfony/deprecation-contracts (v2.5.1)
+  - Locking symfony/doctrine-bridge (v5.4.9)
+  - Locking symfony/dotenv (v5.4.5)
+  - Locking symfony/error-handler (v5.4.9)
+  - Locking symfony/event-dispatcher (v5.4.9)
+  - Locking symfony/event-dispatcher-contracts (v2.5.1)
+  - Locking symfony/expression-language (v5.4.8)
+  - Locking symfony/filesystem (v5.4.9)
+  - Locking symfony/finder (v5.4.8)
+  - Locking symfony/flex (v1.19.2)
+  - Locking symfony/form (v5.4.9)
+  - Locking symfony/framework-bundle (v5.4.9)
+  - Locking symfony/http-foundation (v5.4.9)
+  - Locking symfony/http-kernel (v5.4.9)
+  - Locking symfony/intl (v5.4.8)
+  - Locking symfony/maker-bundle (v1.43.0)
+  - Locking symfony/options-resolver (v5.4.3)
+  - Locking symfony/password-hasher (v5.4.8)
+  - Locking symfony/polyfill-intl-grapheme (v1.26.0)
+  - Locking symfony/polyfill-intl-icu (v1.26.0)
+  - Locking symfony/polyfill-intl-normalizer (v1.26.0)
+  - Locking symfony/polyfill-mbstring (v1.26.0)
+  - Locking symfony/polyfill-php56 (v1.20.0)
+  - Locking symfony/polyfill-php73 (v1.26.0)
+  - Locking symfony/polyfill-php80 (v1.26.0)
+  - Locking symfony/polyfill-php81 (v1.26.0)
+  - Locking symfony/polyfill-uuid (v1.26.0)
+  - Locking symfony/property-access (v5.4.8)
+  - Locking symfony/property-info (v5.4.9)
+  - Locking symfony/proxy-manager-bridge (v5.4.6)
+  - Locking symfony/routing (v5.4.8)
+  - Locking symfony/runtime (v5.4.8)
+  - Locking symfony/security-bundle (v5.4.9)
+  - Locking symfony/security-core (v5.4.8)
+  - Locking symfony/security-csrf (v5.4.9)
+  - Locking symfony/security-guard (v5.4.9)
+  - Locking symfony/security-http (v5.4.9)
+  - Locking symfony/serializer (v5.4.9)
+  - Locking symfony/service-contracts (v2.5.1)
+  - Locking symfony/stopwatch (v5.4.5)
+  - Locking symfony/string (v5.4.9)
+  - Locking symfony/translation (v5.4.9)
+  - Locking symfony/translation-contracts (v2.5.1)
+  - Locking symfony/twig-bridge (v5.4.9)
+  - Locking symfony/twig-bundle (v5.4.8)
+  - Locking symfony/uid (v5.4.3)
+  - Locking symfony/validator (v5.4.8)
+  - Locking symfony/var-dumper (v5.4.9)
+  - Locking symfony/var-exporter (v5.4.9)
+  - Locking symfony/web-link (v5.4.3)
+  - Locking symfony/yaml (v5.4.3)
+  - Locking twig/twig (v3.4.1)
+  - Locking webmozart/assert (1.11.0)
+  - Locking willdurand/negotiation (3.1.0)
+Writing lock file
+Installing dependencies from lock file (including require-dev)
+Package operations: 97 installs, 0 updates, 0 removals
+  - Downloading easycorp/easyadmin-bundle (v3.5.21)
+ 0/1 [>---------------------------]   0%
+ 1/1 [============================] 100%
+ 1/1 [============================] 100%  - Installing symfony/flex (v1.19.2): Extracting archive
+  - Installing symfony/polyfill-php80 (v1.26.0): Extracting archive
+  - Installing symfony/runtime (v5.4.8): Extracting archive
+  - Installing willdurand/negotiation (3.1.0): Extracting archive
+  - Installing psr/link (1.0.0): Extracting archive
+  - Installing symfony/web-link (v5.4.3): Extracting archive
+  - Installing symfony/deprecation-contracts (v2.5.1): Extracting archive
+  - Installing symfony/serializer (v5.4.9): Extracting archive
+  - Installing symfony/polyfill-mbstring (v1.26.0): Extracting archive
+  - Installing symfony/polyfill-intl-normalizer (v1.26.0): Extracting archive
+  - Installing symfony/polyfill-intl-grapheme (v1.26.0): Extracting archive
+  - Installing symfony/string (v5.4.9): Extracting archive
+  - Installing symfony/property-info (v5.4.9): Extracting archive
+  - Installing symfony/property-access (v5.4.8): Extracting archive
+  - Installing symfony/polyfill-php73 (v1.26.0): Extracting archive
+  - Installing symfony/http-foundation (v5.4.9): Extracting archive
+  - Installing psr/event-dispatcher (1.0.0): Extracting archive
+  - Installing symfony/event-dispatcher-contracts (v2.5.1): Extracting archive
+  - Installing symfony/event-dispatcher (v5.4.9): Extracting archive
+  - Installing symfony/var-dumper (v5.4.9): Extracting archive
+  - Installing psr/log (1.1.4): Extracting archive
+  - Installing symfony/error-handler (v5.4.9): Extracting archive
+  - Installing symfony/http-kernel (v5.4.9): Extracting archive
+  - Installing psr/container (1.1.1): Extracting archive
+  - Installing psr/cache (1.0.1): Extracting archive
+  - Installing fig/link-util (1.1.2): Extracting archive
+  - Installing doctrine/inflector (2.0.4): Extracting archive
+  - Installing api-platform/core (v2.6.8): Extracting archive
+  - Installing doctrine/lexer (1.2.3): Extracting archive
+  - Installing doctrine/annotations (1.13.2): Extracting archive
+  - Installing doctrine/cache (2.2.0): Extracting archive
+  - Installing doctrine/collections (1.6.8): Extracting archive
+  - Installing doctrine/event-manager (1.1.1): Extracting archive
+  - Installing doctrine/persistence (3.0.2): Extracting archive
+  - Installing doctrine/common (3.3.0): Extracting archive
+  - Installing symfony/routing (v5.4.8): Extracting archive
+  - Installing symfony/polyfill-php81 (v1.26.0): Extracting archive
+  - Installing symfony/finder (v5.4.8): Extracting archive
+  - Installing symfony/filesystem (v5.4.9): Extracting archive
+  - Installing symfony/service-contracts (v2.5.1): Extracting archive
+  - Installing symfony/dependency-injection (v5.4.9): Extracting archive
+  - Installing symfony/config (v5.4.9): Extracting archive
+  - Installing symfony/var-exporter (v5.4.9): Extracting archive
+  - Installing symfony/cache-contracts (v2.5.1): Extracting archive
+  - Installing symfony/cache (v5.4.9): Extracting archive
+  - Installing symfony/framework-bundle (v5.4.9): Extracting archive
+  - Installing symfony/stopwatch (v5.4.5): Extracting archive
+  - Installing symfony/console (v5.4.9): Extracting archive
+  - Installing laminas/laminas-zendframework-bridge (1.4.1): Extracting archive
+  - Installing laminas/laminas-eventmanager (3.4.0): Extracting archive
+  - Installing laminas/laminas-code (3.4.1): Extracting archive
+  - Installing friendsofphp/proxy-manager-lts (v1.0.12): Extracting archive
+  - Installing doctrine/deprecations (v0.5.3): Extracting archive
+  - Installing doctrine/dbal (3.3.7): Extracting archive
+  - Installing doctrine/migrations (3.4.2): Extracting archive
+  - Installing symfony/doctrine-bridge (v5.4.9): Extracting archive
+  - Installing doctrine/sql-formatter (1.1.3): Extracting archive
+  - Installing doctrine/doctrine-bundle (2.7.0): Extracting archive
+  - Installing doctrine/doctrine-migrations-bundle (3.2.2): Extracting archive
+  - Installing doctrine/instantiator (1.4.1): Extracting archive
+  - Installing symfony/polyfill-uuid (v1.26.0): Extracting archive
+  - Installing symfony/uid (v5.4.3): Extracting archive
+  - Installing twig/twig (v3.4.1): Extracting archive
+  - Installing symfony/translation-contracts (v2.5.1): Extracting archive
+  - Installing symfony/twig-bridge (v5.4.9): Extracting archive
+  - Installing symfony/twig-bundle (v5.4.8): Extracting archive
+  - Installing symfony/translation (v5.4.9): Extracting archive
+  - Installing symfony/password-hasher (v5.4.8): Extracting archive
+  - Installing symfony/security-core (v5.4.8): Extracting archive
+  - Installing symfony/security-http (v5.4.9): Extracting archive
+  - Installing symfony/security-guard (v5.4.9): Extracting archive
+  - Installing symfony/security-csrf (v5.4.9): Extracting archive
+  - Installing symfony/security-bundle (v5.4.9): Extracting archive
+  - Installing symfony/intl (v5.4.8): Extracting archive
+  - Installing symfony/polyfill-intl-icu (v1.26.0): Extracting archive
+  - Installing symfony/options-resolver (v5.4.3): Extracting archive
+  - Installing symfony/form (v5.4.9): Extracting archive
+  - Installing symfony/asset (v5.4.7): Extracting archive
+  - Installing nikic/php-parser (v4.14.0): Extracting archive
+  - Installing doctrine/orm (2.12.3): Extracting archive
+  - Installing easycorp/easyadmin-bundle (v3.5.21): Extracting archive
+  - Installing symfony/polyfill-php56 (v1.20.0)
+  - Installing namshi/jose (7.2.3): Extracting archive
+  - Installing lcobucci/jwt (3.4.6): Extracting archive
+  - Installing lexik/jwt-authentication-bundle (v2.16.0): Extracting archive
+  - Installing nelmio/cors-bundle (2.2.0): Extracting archive
+  - Installing webmozart/assert (1.11.0): Extracting archive
+  - Installing phpdocumentor/reflection-common (2.2.0): Extracting archive
+  - Installing phpdocumentor/type-resolver (1.6.1): Extracting archive
+  - Installing phpdocumentor/reflection-docblock (5.3.0): Extracting archive
+  - Installing phpstan/phpdoc-parser (1.6.3): Extracting archive
+  - Installing symfony/dotenv (v5.4.5): Extracting archive
+  - Installing symfony/expression-language (v5.4.8): Extracting archive
+  - Installing symfony/maker-bundle (v1.43.0): Extracting archive
+  - Installing symfony/proxy-manager-bridge (v5.4.6): Extracting archive
+  - Installing symfony/validator (v5.4.8): Extracting archive
+  - Installing symfony/yaml (v5.4.3): Extracting archive
+  0/83 [>---------------------------]   0%
+ 10/83 [===>------------------------]  12%
+ 20/83 [======>---------------------]  24%
+ 30/83 [==========>-----------------]  36%
+ 40/83 [=============>--------------]  48%
+ 50/83 [================>-----------]  60%
+ 60/83 [====================>-------]  72%    Install of easycorp/easyadmin-bundle failed
+
+ 69/83 [=======================>----]  83%    Install of symfony/intl failed
+
+ 79/83 [==========================>-]  95%
+ 83/83 [============================] 100%
+ 83/83 [============================] 100%
+                                                                                                                                                                                                                                                               
+  [RuntimeException]                                                                                                                                                                                                                                           
+  Failed to extract easycorp/easyadmin-bundle: (50) unzip -qq -o '/var/www/html/wdev2.be/web/fs_stijn/eindwerk/system/vendor/composer/tmp-5984d6f9088a669be4e57f540f8bde89' -d '/var/www/html/wdev2.be/web/fs_stijn/eindwerk/system/vendor/composer/d9dc1ec6'  
+                                                                                                                                                                                                                                                               
+  /var/www/html/wdev2.be/web/fs_stijn/eindwerk/system/vendor/composer/d9dc1ec6/EasyCorp-EasyAdminBundle-d766f12/src/Resources/public/fonts/fa-solid-900.1551f4f60c37af51121f106501f69b80.woff2:  write error (disk full?).  Continue? (y/n/^C)                 
+  warning:  /var/www/html/wdev2.be/web/fs_stijn/eindwerk/system/vendor/composer/d9dc1ec6/EasyCorp-EasyAdminBundle-d766f12/src/Resources/public/fonts/fa-solid-900.1551f4f60c37af51121f106501f69b80.woff2 is probably truncated                                 
+                                                                                                                                                                                                                                                               
+
+install [--prefer-source] [--prefer-dist] [--dry-run] [--dev] [--no-suggest] [--no-dev] [--no-autoloader] [--no-scripts] [--no-progress] [--no-install] [-v|vv|vvv|--verbose] [-o|--optimize-autoloader] [-a|--classmap-authoritative] [--apcu-autoloader] [--apcu-autoloader-prefix APCU-AUTOLOADER-PREFIX] [--ignore-platform-req IGNORE-PLATFORM-REQ] [--ignore-platform-reqs] [--] [<packages>]...
+
+Mon 20 Jun 2022 11:25:29 AM CEST
