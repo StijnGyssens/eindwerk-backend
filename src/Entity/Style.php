@@ -82,7 +82,7 @@ class Style
 
     public function setDescription(string $description): self
     {
-        $this->description = nl2br($description);
+        $this->description = strip_tags($description);
 
         return $this;
     }

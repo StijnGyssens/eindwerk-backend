@@ -60,6 +60,10 @@ class JWTSubscriber implements EventSubscriberInterface
     public function onAuthenticationSuccess(AuthenticationSuccessEvent $event)
     {
         $eventData = $event->getData();
+        $eventUser = $event->getUser();
+        $eventData['id'] = $eventUser->getId();
+
+        $event->setData($eventData);
         if(isset($eventData['token']))
         {
             $response = $event->getResponse();
@@ -83,7 +87,7 @@ class JWTSubscriber implements EventSubscriberInterface
                 $secure = true,
                 $httpOnly = true,
                 $raw = false,
-                $sameSite = 'None'    //kan ook 'lax' zijn, dat is de default waarde
+                $sameSite = 'none'    //kan ook 'lax' zijn, dat is de default waarde
             )
         );
     }
