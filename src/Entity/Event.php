@@ -37,13 +37,11 @@ class Event
 
     /**
      * @ORM\Column(type="datetime")
-     * @Groups({"group:read","event:read","event:write"})
      */
     private $startDate;
 
     /**
      * @ORM\Column(type="datetime")
-     * @Groups({"group:read","event:read","event:write"})
      */
     private $endDate;
 
@@ -92,6 +90,18 @@ class Event
         return $this->startDate;
     }
 
+    /**
+     * @Groups({"group:read","event:read"})
+     */
+    public function getStartDateString(): ?string
+    {
+        return $this->startDate->format('Y-m-d H:i');
+    }
+
+    /**
+     *
+     * @Groups({"event:write"})
+     */
     public function setStartDate(\DateTimeInterface $startDate): self
     {
         $this->startDate = $startDate;
@@ -104,6 +114,18 @@ class Event
         return $this->endDate;
     }
 
+    /**
+     * @Groups({"group:read","event:read"})
+     */
+    public function getEndDateString(): ?string
+    {
+        return $this->endDate->format('Y-m-d H:i');
+    }
+
+    /**
+     *
+     * @Groups({"event:write"})
+     */
     public function setEndDate(\DateTimeInterface $endDate): self
     {
         $this->endDate = $endDate;

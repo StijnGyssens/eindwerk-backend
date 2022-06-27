@@ -20,9 +20,9 @@ class EventCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
+            TextField::new('name'),
             DateTimeField::new('startDate'),
             DateTimeField::new('endDate'),
-            TextField::new('name'),
             TextField::new('location'),
             TextEditorField::new('description'),
             AssociationField::new('groups')
